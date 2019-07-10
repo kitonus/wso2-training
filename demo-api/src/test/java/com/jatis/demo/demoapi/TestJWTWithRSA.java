@@ -18,7 +18,7 @@ import io.jsonwebtoken.Jwts;
 
 public class TestJWTWithRSA {
 
-	@Test
+	//@Test
 	public void test() throws Exception {
 //		String publicKeyString = 
 //				"MIIDSTCCAjGgAwIBAgIEAoLQ/TANBgkqhkiG9w0BAQsFADBVMQswCQYDVQQGEwJV" + 

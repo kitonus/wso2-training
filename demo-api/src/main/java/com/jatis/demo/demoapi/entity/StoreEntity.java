@@ -10,7 +10,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.context.SecurityContextHolder;
 
 @Entity
 public class StoreEntity {
@@ -73,6 +73,6 @@ public class StoreEntity {
 	@PreUpdate
 	protected void onInsert() {
 		lastUpdate = new Date();
-		this.lastUpdateBy = SecurityContextHolder.getContext().getAuthentication().getName();
+		//this.lastUpdateBy = SecurityContextHolder.getContext().getAuthentication().getName();
 	}
 }

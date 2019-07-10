@@ -1,7 +1,6 @@
 package com.jatis.demo.demoapi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +19,6 @@ public class StoreController {
 	@Autowired
 	private StoreEntityRepostory repo;
 	
-	@Secured("ROLE_ADMIN")
 	@PostMapping
 	public StoreEntity save(@RequestBody StoreDTO store) {
 		StoreEntity storeEnt = new StoreEntity();
@@ -30,14 +28,12 @@ public class StoreController {
 		return repo.save(storeEnt);
 	}
 	
-	@Secured("ROLE_USER")
 	@GetMapping("/all")
 	@PostMapping("/all")
 	public Iterable<StoreEntity> findAll(){
 		return repo.findAll();
 	}
 	
-	@Secured("ROLE_USER")
 	@GetMapping("/{code}")
 	public StoreEntity findOne(@PathVariable("code") String code) {
 		return repo.findById(code).get();

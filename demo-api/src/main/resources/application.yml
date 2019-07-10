@@ -1,0 +1,22 @@
+server:
+  port: 7777
+  
+logging:
+  level:
+    com.jatis.demo: debug
+    org.springframework.security: debug
+
+spring:
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+  datasource:
+    username: demo
+    password: password
+    url: jdbc:postgresql://172.20.0.1:5432/demo
+    hikari:
+      maximum-pool-size: 10
+
+jwt.signature.cert.der: /home/hwicaksono/wso2.crt
+jwt.token.header: X-Auth-Token

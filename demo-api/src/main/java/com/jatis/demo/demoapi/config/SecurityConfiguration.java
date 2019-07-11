@@ -72,6 +72,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api/authenticate").permitAll()
             .anyRequest().authenticated()
             .and()
+            .csrf().disable()
             .addFilter(new JWTAuthenticationFilter(authenticationManager(), tokenHeader))
             .addFilter(new JWTAuthorizationFilter(authenticationManager(), tokenHeader, this.userDetailsService, this.pubKey))
             .sessionManagement()

@@ -8,15 +8,16 @@ logging:
 
 spring:
   jpa:
-    database: postgresql
+    database: h2
     hibernate:
       ddl-auto: update
   datasource:
-    username: demo
+    username: demo-api
     password: password
-    url: jdbc:postgresql://172.20.0.1:5432/demo
+    url: jdbc:h2:~/demo-api
     hikari:
       maximum-pool-size: 10
 
 jwt.signature.cert.der: /home/hwicaksono/wso2.crt
+#jwt.signature.cert.der: n/a
 jwt.token.header: X-Auth-Token

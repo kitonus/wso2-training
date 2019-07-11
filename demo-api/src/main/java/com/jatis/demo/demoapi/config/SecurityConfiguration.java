@@ -87,11 +87,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-            .withUser("user")
+            .withUser("android")
             .password(passwordEncoder().encode("password"))
             .authorities("ROLE_USER")
             .and()
-            .withUser("admin")
+            .withUser("web")
             .password(passwordEncoder().encode("passwordadmin"))
             .authorities("ROLE_USER", "ROLE_ADMIN");
         
